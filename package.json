@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "Trigger compaction of couch databases",
   "author": {
-    "name": "Justfone A/S",
-    "email": "udvikling@justfone.dk",
-    "url": "https://justfone.dk"
+    "name": "CubeIO A/S",
+    "email": "devs@cubeio.com",
+    "url": "http://cubeio.com"
   },
   "contributors": [
     {
