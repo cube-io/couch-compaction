@@ -19,4 +19,4 @@ Usage
 
 Go to the git repo and run:
 
-    ./bin/compaction -h <couch db url>
+    ./bin/compaction.js --host <couch db url>
