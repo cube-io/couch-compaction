@@ -19,10 +19,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:justfone/couch-compaction.git"
+    "url": "git@github.com:cube-io/couch-compaction.git"
   },
   "bugs": {
-    "url": "https://github.com/justfone/couch-compaction/issues"
+    "url": "https://github.com/cube-io/couch-compaction/issues"
   },
   "bin": {
     "couch-compaction": "./bin/compaction.js"
