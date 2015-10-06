@@ -21,6 +21,7 @@
     "type": "git",
     "url": "git@github.com:cube-io/couch-compaction.git"
   },
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/cube-io/couch-compaction/issues"
   },
