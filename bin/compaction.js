@@ -4,8 +4,13 @@ var argv = require("yargs")
 	.string("h")
 	.alias("h", "host")
 	.describe("h", "Host to trigger compaction on")
-	.default("h", "http://localhost:5986")
+	.example("h", "http://localhost:5986")
 	.argv;
+
+if (!argv.h) {
+	console.log("Usage: -h [database]");
+	process.exit(1);
+}
 
 var nano = require("nano")(argv.h);
 
