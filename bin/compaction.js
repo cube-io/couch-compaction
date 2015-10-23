@@ -23,6 +23,7 @@ function compactIfShard(name) {
 	}
 	
 	compact(name);
+	compactViews(name);
 	viewCleanup(name);
 }
 
@@ -40,6 +41,30 @@ function compact(name, design) {
 		}
 		console.log("Compaction started on database:", name);
 	});
+}
+
+function compactViews(name) {
+	nano.request({
+		db: name,
+		path: "_all_docs",
+		qs: {
+			startkey: "_design/",
+			endkey: "_design0"
+		}
+	}, function(err, result) {
+		if (err) {
+			return console.log("Could not get views on database:", name, err);
+		}
+
+		if (result.rows.length == 0) {
+			return console.log("No views to perform compaction on for database:", name);
+		}
+
+		result.rows.forEach(function(view) {
+			var design = view.id.replace("_design/", "");
+			compact(name, design);
+		});
+	})
 }
 
 function viewCleanup(name) {
