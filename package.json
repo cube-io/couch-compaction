@@ -1,6 +1,6 @@
 {
   "name": "couch-compaction",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Trigger compaction of couch databases",
   "author": {
     "name": "CubeIO A/S",
