@@ -26,12 +26,18 @@ function compactIfShard(name) {
 	viewCleanup(name);
 }
 
-function compact(name) {
-	nano.db.compact(name, function(err, result) {
+function compact(name, design) {
+	nano.db.compact(name, design, function(err, result) {
 		if (err) {
+			if (design) {
+				return console.log("Could not start compact on database:", name, "view:", design, err);
+			}
 			return console.log("Could not start compact on database:", name, err);
 		}
-		
+
+		if (design) {
+			return console.log("Compaction started on database:", name, "view:", design);
+		}
 		console.log("Compaction started on database:", name);
 	});
 }
